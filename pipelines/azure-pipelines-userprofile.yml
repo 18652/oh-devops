@@ -22,11 +22,13 @@ steps:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
 
-- script: |
+- script: 
     npm install
     npm run build
+  workingDirectory: '/apis/userprofile'
   displayName: 'npm install and build'
 
 - script: 
     npm run test
+  workingDirectory: '/apis/userprofile'
   displayName: 'npm test'
