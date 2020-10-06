@@ -25,10 +25,10 @@ steps:
 - script: 
     npm install
     npm run build
-  workingDirectory: '/apis/userprofile'
+  workingDirectory: './apis/userprofile'
   displayName: 'npm install and build'
 
 - script: 
     npm run test
-  workingDirectory: '/apis/userprofile'
+  workingDirectory: './apis/userprofile'
   displayName: 'npm test'
