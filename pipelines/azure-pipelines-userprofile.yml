@@ -3,6 +3,14 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+trigger: 
+  branches:
+    include:
+      - azure-pipelines
+  paths:
+    include:
+      - pipelines/azure-pipelines-userprofile.yml
+
 pr:
   branches:
     include:
@@ -11,7 +19,7 @@ pr:
     include:
     - apis/userprofile/*
     exclude:
-    - apis/userprofle/README.md
+    - apis/userprofile/README.md
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -22,9 +30,9 @@ steps:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
 
-- script: 
+- script: |
+    echo 'running npm install'
     npm install
-    npm run build
   workingDirectory: './apis/userprofile'
   displayName: 'npm install and build'
 
@@ -32,3 +40,9 @@ steps:
     npm run test
   workingDirectory: './apis/userprofile'
   displayName: 'npm test'
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testRunner: JUnit
+    testResultsFiles: '**/userprofile-report.xml'
