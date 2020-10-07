@@ -8,12 +8,12 @@ on:
     branches: 
       - test
     paths:
-      - "./apis/userprofile/**"
+      - "apis/userprofile/**"
   pull_request:
     branches: 
       - master
     paths:
-      - "./apis/userprofile/**"
+      - "apis/userprofile/**"
 
 jobs:
   build:
