@@ -1,3 +1,5 @@
+[![Build status](https://dev.azure.com/lisheard/OH-devops/_apis/build/status/gitrepo/classic/OH-devops-CI-Trips-UnitTest)](https://dev.azure.com/lisheard/OH-devops/_build/latest?definitionId=13)
+
 # Overview
 
 This is the Trips API for the MyDriving service.
