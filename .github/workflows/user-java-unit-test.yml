@@ -36,6 +36,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: mvn install
         run: mvn clean install
+        working-directory: ./apis/user-java
         
       # Runs a single command using the runners shell
       - name: test
