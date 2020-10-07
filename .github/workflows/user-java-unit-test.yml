@@ -4,11 +4,13 @@ name: user-java-unit-test
 # events but only for the master branch
 on:
   push:
-    branches: [ test ]
+    branches: 
+      - test
     paths: 
       - './apis/user-java/**'
   pull_request:
-    branches: [ master ]
+    branches: 
+      - master
     paths: 
       - './apis/user-java/**'
 
