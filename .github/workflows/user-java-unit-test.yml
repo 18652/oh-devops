@@ -1,0 +1,45 @@
+name: user-java-unit-test
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+
+on:
+  push:
+    branches: 
+      - test    
+    paths: 
+      - "apis/user-java/**"
+  pull_request:
+    branches: 
+      - master
+    paths: 
+      - "apis/user-java/**"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  unittest:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        
+      - name: Setup Maven
+        # You may pin to the exact commit or the version.
+        # uses: stCarolas/setup-maven@9ec7040da00873e1eb3b3d1ef9b7443b8e8c4df1
+        uses: stCarolas/setup-maven@v1
+        with:
+          maven-version: 3.5.4
+
+      # Runs a single command using the runners shell
+      - name: mvn install
+        run: mvn clean install
+        working-directory: ./apis/user-java
+        
+      # Runs a single command using the runners shell
+      - name: test
+        run: mvn test
+        working-directory: ./apis/user-java
