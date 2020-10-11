@@ -19,16 +19,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
+    - name: Setup .NET Core v3
       uses: actions/setup-dotnet@v1.7.2
       with:
         dotnet-version: 3.1.x
     - name: Install dependencies
       run: dotnet restore
       working-directory: ./apis/poi
-    - name: Build
+    - name: Build Poi
       run: dotnet build --configuration Release --no-restore
       working-directory: ./apis/poi
-    - name: Test
+    - name: Unit Test Poi
       run: dotnet test ./tests/UnitTests --no-restore --verbosity normal
       working-directory: ./apis/poi
