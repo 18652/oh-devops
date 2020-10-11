@@ -13,7 +13,7 @@ on:
       - "apis/poi/**"
 
 jobs:
-  build:
+  build_poi:
 
     runs-on: ubuntu-latest
 
