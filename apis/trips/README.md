@@ -2,7 +2,7 @@
 |---|---|
 |Unit Test|[![Build status](https://dev.azure.com/lisheard/OH-devops/_apis/build/status/gitrepo/classic/OH-devops-CI-Trips-UnitTest)](https://dev.azure.com/lisheard/OH-devops/_build/latest?definitionId=13)|
 |Docker Build and Push|[![Build status](https://dev.azure.com/lisheard/OH-devops/_apis/build/status/gitrepo/classic/OH-devops-CI-Trips-Build)](https://dev.azure.com/lisheard/OH-devops/_build/latest?definitionId=12)|
-|  |  |
+|Unit Test|![trips-unit-test](https://github.com/18652/oh-devops/workflows/trips-unit-test/badge.svg)  |
 
 # Overview
 
