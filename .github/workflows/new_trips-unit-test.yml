@@ -42,5 +42,5 @@ jobs:
         working-directory: ./apis/trips
         
       - name: go test
-        run: go test -v ./tests
+        run: go test -v ./tripgo -run Unit
         working-directory: ./apis/trips
