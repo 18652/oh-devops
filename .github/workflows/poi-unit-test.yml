@@ -3,12 +3,14 @@ name: poi-unit-test
 on:
   push:
     branches: 
-      - test    
+      - test
+      - new_test 
     paths: 
       - "apis/poi/**"
   pull_request:
     branches: 
       - master
+      - new_master
     paths: 
       - "apis/poi/**"
 

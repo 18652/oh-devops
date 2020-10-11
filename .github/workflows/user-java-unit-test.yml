@@ -6,12 +6,14 @@ name: user-java-unit-test
 on:
   push:
     branches: 
-      - test    
+      - test
+      - new_test
     paths: 
       - "apis/user-java/**"
   pull_request:
     branches: 
       - master
+      - new_master
     paths: 
       - "apis/user-java/**"
 

@@ -7,11 +7,13 @@ on:
   push:
     branches: 
       - test
+      - new_test
     paths:
       - "apis/userprofile/**"
   pull_request:
     branches: 
       - master
+      - new_master
     paths:
       - "apis/userprofile/**"
 

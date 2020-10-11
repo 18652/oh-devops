@@ -15,6 +15,7 @@ pr:
   branches:
     include:
     - master
+    - new_master
   paths:
     include:
     - apis/userprofile/*
