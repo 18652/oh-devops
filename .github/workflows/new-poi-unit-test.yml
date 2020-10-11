@@ -1,14 +1,14 @@
-name: poi-unit-test
+name: new-poi-unit-test
 
 on:
   push:
     branches: 
-      - test
+      - new_test 
     paths: 
       - "apis/poi/**"
   pull_request:
     branches: 
-      - master
+      - new_master
     paths: 
       - "apis/poi/**"
 
@@ -22,7 +22,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1.7.2
       with:
-        dotnet-version: 2.1.x
+        dotnet-version: 3.1.x
     - name: Install dependencies
       run: dotnet restore
       working-directory: ./apis/poi
